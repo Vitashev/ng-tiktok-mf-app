@@ -1,4 +1,11 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "feed": "apps/feed",
+    "feed-e2e": "apps/feed-e2e",
+    "shared-data-store": "libs/shared/data-store",
+    "shared-ui": "libs/shared/ui",
+    "shell": "apps/shell",
+    "shell-e2e": "apps/shell-e2e"
+  }
 }

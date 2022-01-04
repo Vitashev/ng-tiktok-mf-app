@@ -1,0 +1,32 @@
+<div class="card">
+  <img [src]="post.thumbnail" class="circle" />
+
+  <div class="details">
+    <div class="name">{{ post.author }}</div>
+    <div class="desc">{{ post.title }}</div>
+    <div class="tags">
+      <ng-container *ngFor="let tag of post.tags">
+        <span class="tag">#{{ tag }}</span>
+      </ng-container>
+    </div>
+    <div class="video-wrapper">
+      <video [src]="post.videoUrl" controls autoplay></video>
+
+      <div class="reaction">
+        <div>
+          <span class="circle-icon"
+            ><i class="material-icons"> favorite </i></span
+          >
+          <span>{{ post.score }}</span>
+        </div>
+        <div>
+          <span class="circle-icon"><i class="material-icons"> chat </i></span>
+          <span>{{ post.comments }}</span>
+        </div>
+        <div>
+          <span class="circle-icon"><i class="material-icons"> share </i></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

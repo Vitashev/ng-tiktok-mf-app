@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@ng-tiktok-mf-app/shared/data-store": [
+        "libs/shared/data-store/src/index.ts"
+      ],
+      "@ng-tiktok-mf-app/shared/ui": ["libs/shared/ui/src/index.ts"],
+      "@ng-tiktok-mf-app/shared/ui/styles": ["libs/shared/ui/src/lib/styles"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

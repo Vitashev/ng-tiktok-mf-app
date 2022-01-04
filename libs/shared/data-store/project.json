@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/data-store",
+  "sourceRoot": "libs/shared/data-store/src",
+  "prefix": "ng-tiktok-mf-app",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/data-store"],
+      "options": {
+        "jestConfig": "libs/shared/data-store/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/data-store/src/**/*.ts",
+          "libs/shared/data-store/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

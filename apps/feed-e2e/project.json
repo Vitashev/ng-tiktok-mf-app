@@ -1,0 +1,28 @@
+{
+  "root": "apps/feed-e2e",
+  "sourceRoot": "apps/feed-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/feed-e2e/cypress.json",
+        "devServerTarget": "feed:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "feed:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/feed-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["feed"]
+}

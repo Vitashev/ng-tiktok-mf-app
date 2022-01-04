@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/ui",
+  "sourceRoot": "libs/shared/ui/src",
+  "prefix": "ng-tiktok-mf-app",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/ui"],
+      "options": {
+        "jestConfig": "libs/shared/ui/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/ui/src/**/*.ts",
+          "libs/shared/ui/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

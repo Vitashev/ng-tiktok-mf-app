@@ -1,0 +1,11 @@
+<ng-container *ngIf="feed$ | async as feed">
+  <div class="slider" *ngIf="feed.length">
+    <i class="material-icons" (click)="prevVideo(feed.length)">
+      arrow_back_ios
+    </i>
+    <tt-card [post]="feed[index]"></tt-card>
+    <i class="material-icons" (click)="nextVideo(feed.length)">
+      arrow_forward_ios
+    </i>
+  </div>
+</ng-container>

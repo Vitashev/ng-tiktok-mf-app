@@ -1,0 +1,98 @@
+{
+  "projectType": "application",
+  "root": "apps/feed",
+  "sourceRoot": "apps/feed/src",
+  "prefix": "ng-tiktok-mf-app",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:webpack-browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/feed",
+        "index": "apps/feed/src/index.html",
+        "main": "apps/feed/src/main.ts",
+        "polyfills": "apps/feed/src/polyfills.ts",
+        "tsConfig": "apps/feed/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/feed/src/favicon.ico", "apps/feed/src/assets"],
+        "styles": ["apps/feed/src/styles.scss"],
+        "scripts": [],
+        "customWebpackConfig": {
+          "path": "apps/feed/webpack.config.js"
+        }
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/feed/src/environments/environment.ts",
+              "with": "apps/feed/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all",
+          "customWebpackConfig": {
+            "path": "apps/feed/webpack.prod.config.js"
+          }
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@nrwl/angular:webpack-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "feed:build:production"
+        },
+        "development": {
+          "browserTarget": "feed:build:development"
+        }
+      },
+      "defaultConfiguration": "development",
+      "options": {
+        "port": 5000,
+        "publicHost": "http://localhost:5000"
+      }
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "feed:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/feed/src/**/*.ts", "apps/feed/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/feed"],
+      "options": {
+        "jestConfig": "apps/feed/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
