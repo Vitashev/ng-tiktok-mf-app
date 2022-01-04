@@ -6,7 +6,7 @@ The app demonstrates of microfrontend implementation using Angular on the TikTok
 
 `npm i`
 
-## Run Shell (port 5000) and Feed (port 3000) app
+## Run Shell (port 3000) and Feed (port 5000) app
 
 `npm run start`
 
